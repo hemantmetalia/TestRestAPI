@@ -6,41 +6,58 @@
         <script type="text/javascript" src="scripts/vendor/angular/angular.js"></script>
         <script type="text/javascript" src="scripts/app/app.js"></script>
         <script type="text/javascript" src="scripts/app/testRestCtrl.js"></script>
+    <h2>Test Your Rest API</h2>
+</head>
+<body style="width: 640px;height:640px;margin-left:20px;height: 350px;margin-top:20px">
+    <div ng-controller='testRestCtrl'>
 
-    </head>
-    <body style="width: 640px;height:640px;margin-left:20px;height: 350px;margin-top:20px">
-        <div ng-controller='testRestCtrl'>
-            <form id='restTest' >
-                <div class="form-group">
-                    <input type='text' id='restUrl' ng-model='restUrl' class="form-control" placeholder="Enter Rest Url" required/>
-                    <br/>
-                    <label>
-                        <input type="radio" ng-model="method.type" value="GET">
-                        GET
-                    </label><br/>
-                    <label>
-                        <input type="radio" ng-model="method.type" value="POST">
-                        POST
-                    </label><br/>
-                    <label>
-                        <input type="radio" ng-model="method.type" value="DELETE">
-                        DELETE
-                    </label><br/>
-                    <label>
-                        <input type="radio" ng-model="method.type" value="PUT">
-                        PUT
-                    </label><br/>
-                </div>
-                        <button ng-click='testRest()' >Submit</button>
+        <form id='restTest' >
+            <div class="form-group">
+                <input type='text' id='restUrl' ng-model='restUrl' class="form-control" placeholder="Enter Rest Url" required="true"/>
+                <br/>
+                <label>
+                    <input type="radio" ng-model="method.type" value="GET">
+                    GET
+                </label><br/>
+                <label>
+                    <input type="radio" ng-model="method.type" value="POST">
+                    POST
+                </label><br/>
+                <label>
+                    <input type="radio" ng-model="method.type" value="DELETE">
+                    DELETE
+                </label><br/>
+                <label>
+                    <input type="radio" ng-model="method.type" value="PUT">
+                    PUT
+                </label><br/>
+            </div>
+            <div ng-repeat="param in params">
+                <input ng-model="param.name" placeholder="Parameter Name" size="20"/>
+                <input ng-model="param.value" placeholder="Parameter Value" size="20"/><br/><br/>
+            </div>
+            <button ng-click="AddNewParameter()" class='btn btn-small btn-default'>Add Parameter</button>
+            <button ng-click="DeleteLastParameter()" class='btn btn-small btn-default'>Delete Last Parameter</button>
+            <br/><br/>
+            <button ng-click='testRest()' class='form-control btn btn-small btn-default'  >Submit</button>
+            <br/><br/>
+            <div style="margin-bottom: 20px;background-color:lightgrey;">
+                Response from API <br/>
+                <div ng-if="response.data">
+                    <b>Data   </b> {{response.data}}
                     <br/><br/>
-                    <div>
-                        Response from API <br/>
-                        {{response}}
-                    </div>
-            </form>
-        </div>
+                    <b>Status  </b>{{response.status}}
+                    <br/><br/>
+                    <b>headers  </b>
+                    <br/><br/>
+                    <b>Config  </b>
+                    <br/><br/>
+                </div>
+            </div>
+        </form>
+    </div>
 
 
 
-    </body>
+</body>
 </html>
