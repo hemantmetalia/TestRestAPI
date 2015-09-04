@@ -14,6 +14,22 @@
                 <div class="form-group">
                     <input type='text' id='restUrl' ng-model='restUrl' class="form-control" placeholder="Enter Rest Url" required/>
                     <br/>
+                    <label>
+                        <input type="radio" ng-model="method.type" value="GET">
+                        GET
+                    </label><br/>
+                    <label>
+                        <input type="radio" ng-model="method.type" value="POST">
+                        POST
+                    </label><br/>
+                    <label>
+                        <input type="radio" ng-model="method.type" value="DELETE">
+                        DELETE
+                    </label><br/>
+                    <label>
+                        <input type="radio" ng-model="method.type" value="PUT">
+                        PUT
+                    </label><br/>
                 </div>
                         <button ng-click='testRest()' >Submit</button>
                     <br/><br/>
