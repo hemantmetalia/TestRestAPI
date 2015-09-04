@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html ng-app="restTestAPP">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>This is page on extention click popup</div>
-    </body>
+        <title>Test Your Rest API</title>
+        <link rel="stylesheet" type="text/css" href="scripts/vendor//bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="scripts/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="scripts/app/app.js"></script>
+    <script type="text/javascript" src="scripts/app/testRestCtrl.js"></script>
+    
+</head>
+<body>
+    <div ng-controller='testRestCtrl'>
+        Rest URL : <input type="text" ng-model="restUrl"/><br/>
+        {{restUrl}}
+    </div>
+
+    
+
+</body>
 </html>
