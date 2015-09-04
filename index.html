@@ -4,17 +4,27 @@
         <title>Test Your Rest API</title>
         <link rel="stylesheet" type="text/css" href="scripts/vendor//bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="scripts/vendor/angular/angular.js"></script>
-    <script type="text/javascript" src="scripts/app/app.js"></script>
-    <script type="text/javascript" src="scripts/app/testRestCtrl.js"></script>
-    
-</head>
-<body>
-    <div ng-controller='testRestCtrl'>
-        Rest URL : <input type="text" ng-model="restUrl"/><br/>
-        {{restUrl}}
-    </div>
+        <script type="text/javascript" src="scripts/app/app.js"></script>
+        <script type="text/javascript" src="scripts/app/testRestCtrl.js"></script>
 
-    
+    </head>
+    <body style="width: 640px;height:640px;margin-left:20px;height: 350px;margin-top:20px">
+        <div ng-controller='testRestCtrl'>
+            <form id='restTest' >
+                <div class="form-group">
+                    <input type='text' id='restUrl' ng-model='restUrl' class="form-control" placeholder="Enter Rest Url" required/>
+                    <br/>
+                </div>
+                        <button ng-click='testRest()' >Submit</button>
+                    <br/><br/>
+                    <div>
+                        Response from API <br/>
+                        {{response}}
+                    </div>
+            </form>
+        </div>
 
-</body>
+
+
+    </body>
 </html>
