@@ -41,16 +41,16 @@
             <br/><br/>
             <button ng-click='testRest()' class='form-control btn btn-small btn-default'  >Submit</button>
             <br/><br/>
-            <div style="margin-bottom: 20px;background-color:lightgrey;">
+            <div style="margin-bottom: 20px;background-color: {{response.bgcolor}};">
                 Response from API <br/>
                 <div ng-if="response.data">
-                    <b>Data   </b> {{response.data}}
+                    <b>Data:-   </b> {{response.data}}
                     <br/><br/>
-                    <b>Status  </b>{{response.status}}
+                    <b>Status:-  </b>{{response.status}}
                     <br/><br/>
-                    <b>headers  </b>
+                    <b>headers:-  </b>{{response.headers}}
                     <br/><br/>
-                    <b>Config  </b>
+                    <b>Config:-  </b>{{response.config}}
                     <br/><br/>
                 </div>
             </div>
